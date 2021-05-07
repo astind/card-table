@@ -17,5 +17,8 @@ module.exports = {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist')
   },
-  mode: 'development'
+  mode: 'development',
+  watchOptions: {
+    ignored: '**/node_modules'
+  }
 };
