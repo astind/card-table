@@ -1,12 +1,14 @@
 import "phaser";
 import { MainMenu } from './scenes/main-menu';
+import { env } from './env/env'; 
 
 const config: any = {
   title: "Card Table",
-  width: 800,
-  height: 600,
+  type: Phaser.AUTO,
+  width: env.s_width,
+  height: env.s_height,
   parent: "game",
-  backgroundColor: "#99ff99",
+  backgroundColor: "#008000",
   scene: [MainMenu]
 };
 
