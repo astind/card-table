@@ -11,18 +11,17 @@ export class MainMenu extends Phaser.Scene {
   }
 
   init(params): void {
-    // TODO
   }
 
   preload(): void {
-    // TODO
   }
 
   create(): void {
     // TODO
-    let w_center = (env.s_width / 2);
-    let h_center = (env.s_height / 2);
-    let title = this.add.text(w_center, 200, "Card Table", {
+    let w_center = this.sys.canvas.width * 0.5;
+    let h_center = this.sys.canvas.height * 0.5;
+
+    this.add.text(w_center, 200, "Card Table", {
       font: "68px Arial Bold", color: "#000000"
     }).setOrigin();
 
@@ -40,13 +39,14 @@ export class MainMenu extends Phaser.Scene {
     start_box.on("pointerout", this.exitHover(start_box));
     start_box.on("pointerdown", function () {
       console.log("go to game page");
-    });
+      this.scene.start("Setup");
+    }, this);
 
     settings_box.on("pointerover", this.onHover(settings_box));
     settings_box.on("pointerout", this.exitHover(settings_box));
     settings_box.on("pointerdown", function () {
       console.log('go to settings page');
-    })
+    });
 
   }
 

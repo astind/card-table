@@ -1,15 +1,20 @@
 import "phaser";
 import { MainMenu } from './scenes/main-menu';
+import { Setup } from './scenes/set-up';
 import { env } from './env/env'; 
 
 const config: any = {
   title: "Card Table",
   type: Phaser.AUTO,
-  width: env.s_width,
-  height: env.s_height,
-  parent: "game",
+  scale: {
+    parent: 'game',
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: 1600,
+    height: 900,
+  },
   backgroundColor: "#008000",
-  scene: [MainMenu]
+  scene: [MainMenu, Setup]
 };
 
 
